@@ -4,6 +4,20 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = 3000;
 const path = require('path'); // ADD THIS at the top
+const cors = require('cors');
+
+const allowedOrigins = [
+    'http://localhost:3000',
+    'https://yourdomain.com' // Replace with your Hostinger domain when live
+];
+
+// ✅ CORS Setup
+app.use(cors({
+    origin: allowedOrigins,
+    methods: ['GET', 'POST'],
+    credentials: true
+}));
+
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
@@ -15,9 +29,7 @@ app.use(bodyParser.json());
 
 app.use(express.static(__dirname));
 
-app.get('/', (req, res) => {
-    res.sendFile(path.join('index.html'));
-});
+
 
 
 // POST endpoint for contact form submission
