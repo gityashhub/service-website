@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link
+href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+rel="stylesheet"
+/>
+
+<title>SKY NDT Services</title>
+</head>
+<body>
+    <section class="sub-header">
+        <nav>
+            <a href="index.html"><img src="eduford_img/logo.png"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="ri-arrow-right-line" onclick="hideMenu()"></i>
+                <ul>
+                    <li>
+                        <a href="index.html">HOME</a>
+                    </li>
+                    <li>
+                        <a href="About.html">ABOUT</a>
+                    </li>
+                    <li>
+                        <a href="Services.html">SERVICES</a>
+                    </li>
+                    <li>
+                        <a href="blog.html">BLOG</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">CONTACT</a>
+                    </li>
+
+                </ul>
+            </div>
+            <i class="ri-menu-line" onclick="showMenu()"></i>
+                
+        </nav>
+
+
+        <h1>VISION AND MISSION</h1>
+    </section>
+
+
+<section class="blog-content">
+    <div class="row">
+        <div class="blog-left">
+                <img src="eduford_img/mission SKY.png"></img>
+                <h2>Vision And Mission</h2>
+                <p>Dedicated to setting global benchmarks in
+                    Non-Destructive Testing, Our Vision Is to Lead
+                    with innovative, safe and quality – centric NDT
+                    solutions for a safer, efficient world.</p>
+                <br>
+                <p>Our mission is to deliver top-tier
+                    industrial inspection and non-destructive
+                    testing.</p>
+                <br>
+                <p>we Continuously update our inspection techniques to stay at
+                    the forefront of the industry, Promoting the value of learning
+                    and innovation, we strive to elevate standards and enrich live.</p>
+                <br>
+                <p>We assure the reliability of our services, fulfilling our promise
+                    to our customers.</p>
+                <div class="comment-box">
+                    <h3>
+                        Leave a Comment
+                    </h3>
+                    <form class="comment-form" id="comment-form">
+                        <input type="text" name="name" placeholder="Enter Name" required>
+                        <input type="email" name="email" placeholder="Enter Email" required>
+                        <textarea rows="5" name="message" placeholder="Your comment" required></textarea>
+                        <button type="submit" class="hero-btn red-btn">POST COMMENT</button>
+                    </form>
+                </div>
+            
+            
+            </div>
+        <div class="blog-right">
+            <h3>
+                Post Categories
+            </h3>
+            <div>
+                <span>Business Analytics</span>
+                <span>21</span>
+            </div>
+            <div>
+                <span>Data Science</span>
+                <span>28</span>
+            </div>
+            <div>
+                <span>Machine Learning</span>
+                <span>15</span>
+            </div>
+            <div>
+                <span>Computer Science</span>
+                <span>34</span>
+            </div>
+            <div>
+                <span>AutoCAD</span>
+                <span>34</span>
+            </div>
+            <div>
+                <span>Journalism</span>
+                <span>22</span>
+            </div>
+            <div>
+                <span>Commmerce</span>
+                <span>30</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="footer">
+    <h4>About us</h4>
+    <p>Stay Connected with us for latest updates</p>
+    <div class="icons">
+        <a class="ri-facebook-fill" href=""></a>
+        <a class="ri-twitter-fill" href=""></a>
+        <a class="ri-instagram-fill" href=""></a>
+        <a class="ri-linkedin-box-line" href=""></a>
+    </div>
+    <!-- <p>Made with <i class="ri-heart-fill"></i> by Easy Tutorials</p> -->
+</section>
+
+
+    <script>
+        var navLinks = document.getElementById("navLinks");
+        function showMenu(){
+            navLinks.style.right = "0";
+        }
+        function hideMenu(){
+            navLinks.style.right = "-200px";
+        }
+
+
+        document.getElementById('comment-form').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
+
+            const response = await fetch('/send-comment', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+            });
+
+            const result = await response.json();
+            alert(result.message || result.error);
+        });
+    </script>
+    
+    
+    </body>
+    </html>
