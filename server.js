@@ -40,14 +40,14 @@ app.post('/send-inquiry', async (req, res) => {
     let transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'mpmiteshuttekar001742@gmail.com',
-            pass: 'lfkxchntmoxrzkkt'
+            user: 'info@skyndtservice.com',
+            pass: 'gbinrcwtkeodfmgj'
         }
     });
 
     const mailOptions = {
-        from: 'mpmiteshuttekar001742@gmail.com',
-        to: 'miteshuttekar1631@gmail.com', // admin receives this
+        from: 'info@skyndtservice.com',
+        to: 'skyndtservice@gmail.com', // admin receives this
         subject: `New Inquiry: ${subject}`,
         html: `
             <h2>New Inquiry Received</h2>
@@ -75,14 +75,14 @@ app.post('/send-comment', async (req, res) => {
     let transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'mpmiteshuttekar001742@gmail.com',
-            pass: 'lfkxchntmoxrzkkt'
+            user: 'info@skyndtservice.com',
+            pass: 'gbinrcwtkeodfmgj'
         }
     });
 
     const mailOptions = {
-        from: 'mpmiteshuttekar001742@gmail.com',
-        to: 'miteshuttekar1631@gmail.com', // admin receives this
+        from: 'info@skyndtservice.com',
+        to: 'skyndtservice@gmail.com', // admin receives this
         subject: `New Comment from: ${name}`,
         html: `
             <h2>New Comment Received</h2>
