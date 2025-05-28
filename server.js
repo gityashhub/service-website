@@ -8,7 +8,7 @@ const cors = require('cors');
 
 const allowedOrigins = [
     'http://localhost:3000',
-    'https://yourdomain.com' // Replace with your Hostinger domain when live
+    'https://skyndtservice.com' // Replace with your Hostinger domain when live
 ];
 
 // ✅ CORS Setup
